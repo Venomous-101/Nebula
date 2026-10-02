@@ -1,0 +1,6 @@
+# Build context hygiene -- never ship local envs or caches into the image.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.env
