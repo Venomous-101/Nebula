@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>💔 Breakup Recovery Squad — Browser Edition</title>
+<style>
+  :root{
+    --bg:#0e1117; --panel:#161b22; --panel2:#1c2230; --border:#2a3140;
+    --text:#e6edf3; --muted:#8b949e; --accent:#ff4b4b; --accent2:#ff7a7a;
+    --ok:#3fb950; --warn:#d29922;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 22px 80px}
+  header h1{margin:0 0 6px;font-size:2.1rem;letter-spacing:-.02em}
+  header p{margin:0 0 4px;color:var(--muted)}
+  .badge{
+    display:inline-block;font-size:.74rem;padding:3px 9px;border-radius:999px;
+    background:rgba(63,185,80,.14);color:var(--ok);border:1px solid rgba(63,185,80,.3);
+    margin-bottom:14px;font-weight:600;
+  }
+  .layout{display:grid;grid-template-columns:330px 1fr;gap:26px;margin-top:26px;align-items:start}
+  @media(max-width:860px){.layout{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px}
+  .card h2{font-size:.95rem;margin:0 0 14px;letter-spacing:.02em;text-transform:uppercase;color:var(--muted)}
+  label{display:block;font-size:.85rem;font-weight:600;margin:14px 0 6px}
+  label:first-of-type{margin-top:0}
+  input[type=text],input[type=password],textarea{
+    width:100%;background:#0d1117;border:1px solid var(--border);border-radius:8px;
+    color:var(--text);padding:10px 12px;font-size:.92rem;font-family:inherit;
+  }
+  input:focus,textarea:focus{outline:none;border-color:var(--accent)}
+  textarea{resize:vertical;min-height:130px}
+  .hint{font-size:.76rem;color:var(--muted);margin-top:6px}
+  button{
+    font-family:inherit;font-size:.95rem;font-weight:600;cursor:pointer;
+    border:none;border-radius:8px;padding:11px 18px;
+    background:var(--accent);color:#fff;transition:filter .15s,opacity .15s;
+  }
+  button:hover:not(:disabled){filter:brightness(1.12)}
+  button:disabled{opacity:.55;cursor:not-allowed}
+  button.primary{width:100%;margin-top:18px;padding:13px}
+  .status{margin-top:12px;font-size:.84rem;padding:9px 11px;border-radius:7px;display:none}
+  .status.show{display:block}
+  .status.ok{background:rgba(63,185,80,.12);color:var(--ok)}
+  .status.warn{background:rgba(210,153,34,.12);color:var(--warn)}
+  .status.err{background:rgba(248,81,73,.12);color:#f85149}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:700px){.cols{grid-template-columns:1fr}}
+  .drop{
+    border:1px dashed var(--border);border-radius:8px;padding:16px;text-align:center;
+    color:var(--muted);font-size:.85rem;cursor:pointer;transition:border-color .15s;
+  }
+  .drop:hover{border-color:var(--accent)}
+  .thumbs{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .thumbs img{height:56px;border-radius:6px;border:1px solid var(--border)}
+  .agent{margin-top:26px;border-top:1px solid var(--border);padding-top:18px}
+  .agent:first-child{margin-top:0;border-top:none;padding-top:0}
+  .agent h3{margin:0 0 4px;font-size:1.22rem;display:flex;align-items:center;gap:9px}
+  .agent .phase{font-size:.78rem;color:var(--muted);margin-bottom:10px;min-height:1.1em}
+  .out{background:var(--panel2);border:1px solid var(--border);border-radius:9px;padding:16px 18px;font-size:.94rem}
+  .out:empty{display:none}
+  .out h1,.out h2,.out h3,.out h4{margin:16px 0 8px;line-height:1.3}
+  .out h1:first-child,.out h2:first-child,.out h3:first-child{margin-top:0}
+  .out h2{font-size:1.15rem}.out h3{font-size:1.02rem}
+  .out ul,.out ol{margin:8px 0;padding-left:22px}
+  .out li{margin:4px 0}
+  .out p{margin:9px 0}
+  .out code{background:#0d1117;padding:2px 6px;border-radius:5px;font-size:.88em}
+  .out pre{background:#0d1117;padding:12px;border-radius:8px;overflow:auto}
+  .out strong{color:#fff}
+  .out hr{border:none;border-top:1px solid var(--border);margin:14px 0}
+  .err{color:#f85149;font-size:.9rem}
+  .spin{display:inline-block;width:11px;height:11px;border:2px solid var(--muted);
+    border-top-color:transparent;border-radius:50%;animation:sp .7s linear infinite;vertical-align:-1px}
+  @keyframes sp{to{transform:rotate(360deg)}}
+  footer{margin-top:46px;text-align:center;color:var(--muted);font-size:.84rem;
+    border-top:1px solid var(--border);padding-top:20px}
+  .steps{font-size:.84rem;color:var(--muted);margin:10px 0 0;padding-left:18px}
+  .steps li{margin:5px 0}
+  a{color:var(--accent2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="badge">Runs entirely in your browser · key never leaves this page</div>
+    <h1>💔 Breakup Recovery Squad</h1>
+    <p>Your AI-powered breakup recovery team — four specialised agents working in sequence.</p>
+  </header>
+
+  <div class="layout">
+    <!-- ── sidebar ─────────────────────────────────────────── -->
+    <div class="card">
+      <h2>🔑 API Configuration</h2>
+
+      <label for="key">OpenRouter API Key</label>
+      <input id="key" type="password" placeholder="sk-or-v1-..." autocomplete="off" spellcheck="false">
+      <div class="hint">Stays in this tab. Requests go straight from your browser to OpenRouter — no server involved.</div>
+
+      <label for="model">Model ID</label>
+      <input id="model" type="text" value="openrouter/free" spellcheck="false">
+      <div class="hint">Default auto-routes to a free model that supports images + tools.</div>
+
+      <button id="run" class="primary">Get Recovery Plan 💝</button>
+      <div id="status" class="status"></div>
+
+      <div class="hint" style="margin-top:16px">Need a key?</div>
+      <ol class="steps">
+        <li>Sign up at <a href="https://openrouter.ai/" target="_blank" rel="noopener">openrouter.ai</a> — free models need no card</li>
+        <li>Create a key at <a href="https://openrouter.ai/keys" target="_blank" rel="noopener">openrouter.ai/keys</a></li>
+        <li>Browse models at <a href="https://openrouter.ai/models" target="_blank" rel="noopener">openrouter.ai/models</a></li>
+      </ol>
+    </div>
+
+    <!-- ── main ────────────────────────────────────────────── -->
+    <div>
+      <div class="card">
+        <div class="cols">
+          <div>
+            <h2>Share Your Feelings</h2>
+            <textarea id="story" placeholder="Tell us your story..."></textarea>
+          </div>
+          <div>
+            <h2>Upload Chat Screenshots</h2>
+            <div class="drop" id="drop">Drag &amp; drop or click to choose<br><span style="font-size:.78rem">JPG, PNG</span></div>
+            <input id="files" type="file" accept="image/png,image/jpeg" multiple hidden>
+            <div class="thumbs" id="thumbs"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="results"></div>
+    </div>
+  </div>
+
+  <footer>
+    Made with ❤️ by the Breakup Recovery Squad · Browser Edition<br>
+    <span style="font-size:.78rem">Powered by OpenRouter. Your API key and data never touch the host server.</span>
+  </footer>
+</div>
+
+<script>
+/* ── agent definitions, mirroring ai_breakup_recovery_agent.py ─────────── */
+const AGENTS = [
+  { icon:"🤗", title:"Emotional Support",
+    system:`You are an empathetic therapist that:
+1. Listens with empathy and validates feelings
+2. Uses gentle humor to lighten the mood
+3. Shares relatable breakup experiences
+4. Offers comforting words and encouragement
+5. Analyzes both text and image inputs for emotional context
+Be supportive and understanding in your responses`,
+    prompt: s => `Analyze the emotional state and provide empathetic support based on:
+User's message: ${s}
+
+Please provide a compassionate response with:
+1. Validation of feelings
+2. Gentle words of comfort
+3. Relatable experiences
+4. Words of encouragement` },
+
+  { icon:"✍️", title:"Finding Closure",
+    system:`You are a closure specialist that:
+1. Creates emotional messages for unsent feelings
+2. Helps express raw, honest emotions
+3. Formats messages clearly with headers
+4. Ensures tone is heartfelt and authentic
+Focus on emotional release and closure`,
+    prompt: s => `Help create emotional closure based on:
+User's feelings: ${s}
+
+Please provide:
+1. Template for unsent messages
+2. Emotional release exercises
+3. Closure rituals
+4. Moving forward strategies` },
+
+  { icon:"📅", title:"Your Recovery Plan",
+    system:`You are a recovery routine planner that:
+1. Designs 7-day recovery challenges
+2. Includes fun activities and self-care tasks
+3. Suggests social media detox strategies
+4. Creates empowering playlists
+Focus on practical recovery steps`,
+    prompt: s => `Design a 7-day recovery plan based on:
+Current state: ${s}
+
+Include:
+1. Daily activities and challenges
+2. Self-care routines
+3. Social media guidelines
+4. Mood-lifting music suggestions` },
+
+  { icon:"💪", title:"Honest Perspective",
+    // The Python version grounds this agent with DuckDuckGo; here we use
+    // OpenRouter's web-search server tool, with a no-tool retry on failure.
+    tools:[{type:"openrouter:web_search"}],
+    system:`You are a direct feedback specialist that:
+1. Gives raw, objective feedback about breakups
+2. Explains relationship failures clearly
+3. Uses blunt, factual language
+4. Provides reasons to move forward
+Focus on honest insights without sugar-coating`,
+    prompt: s => `Provide honest, constructive feedback about:
+Situation: ${s}
+
+Include:
+1. Objective analysis
+2. Growth opportunities
+3. Future outlook
+4. Actionable steps` },
+];
+
+const $ = id => document.getElementById(id);
+const statusEl = $("status");
+const resultsEl = $("results");
+let images = [];   // data URLs
+
+function setStatus(msg, kind){
+  statusEl.className = "status show " + (kind||"");
+  statusEl.innerHTML = msg;
+}
+
+/* ── file handling ────────────────────────────────────────────────────── */
+function addFiles(list){
+  [...list].filter(f => /^image\/(png|jpeg)$/.test(f.type)).forEach(f => {
+    const r = new FileReader();
+    r.onload = () => { images.push(r.result); renderThumbs(); };
+    r.readAsDataURL(f);
+  });
+}
+function renderThumbs(){
+  $("thumbs").innerHTML = images.map((src,i) =>
+    `<img src="${src}" title="click to remove" onclick="removeImage(${i})">`).join("");
+}
+window.removeImage = i => { images.splice(i,1); renderThumbs(); };
+
+$("drop").onclick = () => $("files").click();
+$("files").onchange = e => addFiles(e.target.files);
+$("drop").ondragover = e => { e.preventDefault(); $("drop").style.borderColor = "var(--accent)"; };
+$("drop").ondragleave = () => { $("drop").style.borderColor = ""; };
+$("drop").ondrop = e => {
+  e.preventDefault(); $("drop").style.borderColor = "";
+  addFiles(e.dataTransfer.files);
+};
+
+/* ── tiny markdown renderer ───────────────────────────────────────────── */
+function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+function md(src){
+  const lines = esc(src).split("\n");
+  let out = [], list = null;
+  const closeList = () => { if(list){ out.push(`</${list}>`); list = null; } };
+  const inline = t => t
+    .replace(/`([^`]+)`/g,"<code>$1</code>")
+    .replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>")
+    .replace(/(^|[\s(])\*([^*\n]+)\*/g,"$1<em>$2</em>")
+    .replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+
+  for (const raw of lines){
+    const line = raw.replace(/\s+$/,"");
+    let m;
+    if (/^\s*(---+|\*\*\*+)\s*$/.test(line)){ closeList(); out.push("<hr>"); continue; }
+    if (m = line.match(/^(#{1,6})\s+(.*)$/)){ closeList(); const l=m[1].length; out.push(`<h${l}>${inline(m[2])}</h${l}>`); continue; }
+    if (m = line.match(/^\s*[-*+]\s+(.*)$/)){ if(list!=="ul"){closeList();out.push("<ul>");list="ul";} out.push(`<li>${inline(m[1])}</li>`); continue; }
+    if (m = line.match(/^\s*\d+[.)]\s+(.*)$/)){ if(list!=="ol"){closeList();out.push("<ol>");list="ol";} out.push(`<li>${inline(m[1])}</li>`); continue; }
+    if (!line.trim()){ closeList(); continue; }
+    closeList(); out.push(`<p>${inline(line)}</p>`);
+  }
+  closeList();
+  return out.join("");
+}
+
+/* ── streaming OpenRouter call ────────────────────────────────────────── */
+async function callAgent(agent, story, key, model, onDelta){
+  const content = [{ type:"text", text: agent.prompt(story) }];
+  images.forEach(src => content.push({ type:"image_url", image_url:{ url: src } }));
+
+  const body = {
+    model,
+    stream: true,
+    messages: [
+      { role:"system", content: agent.system },
+      { role:"user",   content },
+    ],
+  };
+  if (agent.tools) body.tools = agent.tools;
+
+  const send = async payload => fetch("https://openrouter.ai/api/v1/chat/completions", {
+    method:"POST",
+    headers:{
+      "Authorization": "Bearer " + key,
+      "Content-Type": "application/json",
+      "HTTP-Referer": location.origin,
+      "X-Title": "Breakup Recovery Squad (Browser Edition)",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  let res = await send(body);
+
+  // Some models reject the web-search tool; retry once without it.
+  if (!res.ok && body.tools){
+    const detail = await res.text();
+    if (res.status === 400 || res.status === 404){
+      delete body.tools;
+      res = await send(body);
+    } else {
+      throw new Error(`${res.status}: ${detail.slice(0,300)}`);
+    }
+  }
+
+  if (!res.ok){
+    const detail = await res.text();
+    throw new Error(`${res.status} ${res.statusText} — ${detail.slice(0,300)}`);
+  }
+
+  const reader = res.body.getReader();
+  const dec = new TextDecoder();
+  let buf = "", full = "";
+
+  while (true){
+    const { done, value } = await reader.read();
+    if (done) break;
+    buf += dec.decode(value, { stream:true });
+    const parts = buf.split("\n");
+    buf = parts.pop();
+    for (const line of parts){
+      const t = line.trim();
+      if (!t.startsWith("data:")) continue;
+      const data = t.slice(5).trim();
+      if (!data || data === "[DONE]") continue;
+      try{
+        const j = JSON.parse(data);
+        if (j.error) throw new Error(j.error.message || "provider error");
+        const d = j.choices?.[0]?.delta?.content;
+        if (d){ full += d; onDelta(full); }
+      }catch(e){ if (e.message && !/JSON/.test(e.message)) throw e; }
+    }
+  }
+  if (!full.trim()) throw new Error("model returned an empty response");
+  return full;
+}
+
+/* ── orchestration ────────────────────────────────────────────────────── */
+$("run").onclick = async () => {
+  const key = $("key").value.trim();
+  const model = $("model").value.trim() || "openrouter/free";
+  const story = $("story").value.trim();
+
+  if (!key) return setStatus("Please enter your OpenRouter API key.", "err");
+  if (!story && !images.length) return setStatus("Share your feelings or upload screenshots first.", "err");
+
+  $("run").disabled = true;
+  resultsEl.innerHTML = "";
+  setStatus(`<span class="spin"></span> Working… the four agents run one after another.`, "warn");
+
+  const blocks = AGENTS.map((a,i) => {
+    const el = document.createElement("div");
+    el.className = "agent";
+    el.innerHTML = `<h3>${a.icon} ${a.title}</h3>
+                    <div class="phase" id="phase-${i}">waiting…</div>
+                    <div class="out" id="out-${i}"></div>`;
+    resultsEl.appendChild(el);
+    return el;
+  });
+
+  for (let i = 0; i < AGENTS.length; i++){
+    const agent = AGENTS[i];
+    const phase = $("phase-"+i), out = $("out-"+i);
+    phase.innerHTML = `<span class="spin"></span> ${agent.title} is thinking…`;
+    try{
+      await callAgent(agent, story, key, model, txt => { out.innerHTML = md(txt); });
+      phase.textContent = "✅ done";
+    }catch(e){
+      phase.innerHTML = "";
+      out.innerHTML = `<span class="err">⚠️ ${esc(e.message)}</span>`;
+    }
+  }
+
+  setStatus("Recovery plan complete.", "ok");
+  $("run").disabled = false;
+  $("run").scrollIntoView({ behavior:"smooth", block:"nearest" });
+};
+</script>
+</body>
+</html>

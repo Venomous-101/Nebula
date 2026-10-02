@@ -1,5 +1,6 @@
 from agno.agent import Agent
 from agno.models.google import Gemini
+from agno.models.openrouter import OpenRouter
 from agno.media import Image as AgnoImage
 from agno.tools.duckduckgo import DuckDuckGoTools
 import streamlit as st
@@ -13,9 +14,21 @@ import os
 logging.basicConfig(level=logging.ERROR)
 logger = logging.getLogger(__name__)
 
-def initialize_agents(api_key: str) -> tuple[Agent, Agent, Agent, Agent]:
+def build_model(provider: str, api_key: str, model_id: Optional[str] = None):
+    """Create the LLM backend. Supports Google Gemini and OpenRouter."""
+    if provider == "OpenRouter":
+        # openrouter/free is an auto-router that only picks models supporting
+        # the features the request needs (image input + tool calling here).
+        return OpenRouter(id=model_id or "openrouter/free", api_key=api_key)
+    # NOTE: gemini-2.0-flash-exp was shut down by Google on 1 June 2026.
+    return Gemini(id=model_id or "gemini-3.5-flash", api_key=api_key)
+
+
+def initialize_agents(
+    api_key: str, provider: str = "Gemini", model_id: Optional[str] = None
+) -> tuple[Agent, Agent, Agent, Agent]:
     try:
-        model = Gemini(id="gemini-2.0-flash-exp", api_key=api_key)
+        model = build_model(provider, api_key, model_id)
         
         therapist_agent = Agent(
             model=model,
@@ -90,32 +103,66 @@ st.set_page_config(
 
 
 # Sidebar for API key input
+PROVIDERS = {
+    "Gemini": {
+        "key_label": "Enter your Gemini API Key",
+        "key_help": "Get your API key from Google AI Studio (free tier, no card)",
+        "default_model": "gemini-3.5-flash",
+        "signup": """
+        To get a free API key:
+        1. Go to [Google AI Studio](https://aistudio.google.com/app/apikey)
+        2. Click "Create API key" — no credit card required
+        """,
+    },
+    "OpenRouter": {
+        "key_label": "Enter your OpenRouter API Key",
+        "key_help": "Starts with sk-or-v1-... — get one at openrouter.ai/keys",
+        "default_model": "openrouter/free",
+        "signup": """
+        To get an API key:
+        1. Sign up at [OpenRouter](https://openrouter.ai/) — free models need no card
+        2. Create a key at [openrouter.ai/keys](https://openrouter.ai/keys)
+        3. Browse model IDs at [openrouter.ai/models](https://openrouter.ai/models)
+        """,
+    },
+}
+
 with st.sidebar:
     st.header("🔑 API Configuration")
 
     if "api_key_input" not in st.session_state:
         st.session_state.api_key_input = ""
-        
+
+    provider = st.selectbox(
+        "Provider",
+        list(PROVIDERS.keys()),
+        index=0,
+        help="Gemini or OpenRouter — both work; OpenRouter gives access to many models",
+    )
+    provider_cfg = PROVIDERS[provider]
+
     api_key = st.text_input(
-        "Enter your Gemini API Key",
+        provider_cfg["key_label"],
         value=st.session_state.api_key_input,
         type="password",
-        help="Get your API key from Google AI Studio",
-        key="api_key_widget"  
+        help=provider_cfg["key_help"],
+        key="api_key_widget"
     )
 
     if api_key != st.session_state.api_key_input:
         st.session_state.api_key_input = api_key
-    
+
+    model_id = st.text_input(
+        "Model ID",
+        value=provider_cfg["default_model"],
+        help="Override if the default is unavailable on your account",
+    )
+
     if api_key:
         st.success("API Key provided! ✅")
     else:
         st.warning("Please enter your API key to proceed")
-        st.markdown("""
-        To get your API key:
-        1. Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
-        2. Enable the Generative Language API in your [Google Cloud Console](https://console.developers.google.com/apis/api/generativelanguage.googleapis.com)
-        """)
+        st.markdown(provider_cfg["signup"])
 
 # Main content
 st.title("💔 Breakup Recovery Squad")
@@ -153,7 +200,7 @@ if st.button("Get Recovery Plan 💝", type="primary"):
     if not st.session_state.api_key_input:
         st.warning("Please enter your API key in the sidebar first!")
     else:
-        therapist_agent, closure_agent, routine_planner_agent, brutal_honesty_agent = initialize_agents(st.session_state.api_key_input)
+        therapist_agent, closure_agent, routine_planner_agent, brutal_honesty_agent = initialize_agents(st.session_state.api_key_input, provider, model_id)
         
         if all([therapist_agent, closure_agent, routine_planner_agent, brutal_honesty_agent]):
             if user_input or uploaded_files:
