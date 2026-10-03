@@ -1,5 +1,5 @@
 openai-agents==0.4.2
-streamlit==1.51.0
+streamlit==1.54.0
 qdrant-client==1.15.1
 fastembed==0.7.3
 langchain==1.0.3
