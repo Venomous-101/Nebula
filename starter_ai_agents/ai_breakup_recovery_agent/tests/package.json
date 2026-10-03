@@ -1,0 +1,11 @@
+{
+  "name": "ai-breakup-recovery-browser-xss-audit",
+  "private": true,
+  "description": "XSS audit harness for the Browser Edition (../browser/index.html). Run: npm install && node xss-audit.js",
+  "scripts": {
+    "audit": "node xss-audit.js"
+  },
+  "dependencies": {
+    "jsdom": "^27.0.0"
+  }
+}
