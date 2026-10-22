@@ -74,10 +74,10 @@ importers:
     dependencies:
       '@modelcontextprotocol/ext-apps':
         specifier: ^0.4.0
-        version: 0.4.2(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.3.5))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod@4.3.5)
+        version: 0.4.2(@modelcontextprotocol/sdk@1.32.0(@cfworker/json-schema@4.1.1)(zod@4.3.5))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod@4.3.5)
       '@modelcontextprotocol/sdk':
-        specifier: ^1.25.2
-        version: 1.29.0(@cfworker/json-schema@4.1.1)(zod@4.3.5)
+        specifier: ^1.32.0
+        version: 1.32.0(@cfworker/json-schema@4.1.1)(zod@4.3.5)
       react:
         specifier: ^19.2.0
         version: 19.2.4
@@ -173,8 +173,8 @@ importers:
         specifier: ^1.0.1
         version: 1.4.1(@cfworker/json-schema@4.1.1)(@mastra/core@1.21.0(@cfworker/json-schema@4.1.1)(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.1.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod-to-json-schema@3.25.2(zod@3.25.76))(zod@3.25.76))(@standard-community/standard-openapi@0.2.9(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.1.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod-to-json-schema@3.25.2(zod@3.25.76))(zod@3.25.76))(@standard-schema/spec@1.1.0)(openapi-types@12.1.3)(zod@3.25.76))(@types/json-schema@7.0.15)(openapi-types@12.1.3)(zod@3.25.76))(@types/json-schema@7.0.15)(zod@3.25.76)
       '@modelcontextprotocol/sdk':
-        specifier: ^1.25.2
-        version: 1.29.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
+        specifier: ^1.32.0
+        version: 1.32.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
       dotenv:
         specifier: ^17.2.3
         version: 17.4.0
@@ -607,17 +607,17 @@ packages:
   '@copilotkitnext/agent@1.54.1':
     resolution: {integrity: sha512-TA5p6U3o/8UDb1bfpmWBcWjB/45SwTlhxKwoFHZEALioVGCQ7sEyfoHKE8taLc/yq3OUqeKf3IPeewbINvM1wg==}
     engines: {node: '>=18'}
-    deprecated: This package is deprecated. Use @copilotkit/agent instead. V2 features are being integrated into the main @copilotkit exports and will be available under the /v2 subpath.
+    deprecated: Moved into @copilotkit/runtime. Import from '@copilotkit/runtime/v2'.
 
   '@copilotkitnext/core@1.54.1':
     resolution: {integrity: sha512-DAdsMhr3AsO8z/LwqBoEYlDfjKDqeYJFIvS5H/J819j3xdPOLSAvJ08h44BwC/ZNQFryGoekJwF5pX5wzTqJAA==}
     engines: {node: '>=18'}
-    deprecated: This package is deprecated. Use @copilotkit/core instead. V2 features are being integrated into the main @copilotkit exports and will be available under the /v2 subpath.
+    deprecated: Use @copilotkit/core instead.
 
   '@copilotkitnext/react@1.54.1':
     resolution: {integrity: sha512-akCeQyO/O/kmU3PyvTU6K++PU/p516+KCkTJHGIQUkPLyA3CF8tXwwomqmvahgJ4vI1evAM7lnY4pcm7vXT1/Q==}
     engines: {node: '>=18'}
-    deprecated: This package is deprecated. Use @copilotkit/react instead. V2 features are being integrated into the main @copilotkit exports and will be available under the /v2 subpath.
+    deprecated: Moved into @copilotkit/react-core. Import from '@copilotkit/react-core/v2'.
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -625,7 +625,7 @@ packages:
   '@copilotkitnext/runtime@1.54.1':
     resolution: {integrity: sha512-LfuCcmrBs/f4sF76gchHGEqSrzCAW0iS3zMmGhKEnfC0JOMIm25aZvzJIEQP5Ap8sQfLseJ5FInwQWJWELJ77A==}
     engines: {node: '>=18'}
-    deprecated: This package is deprecated. Use @copilotkit/runtime instead. V2 features are being integrated into the main @copilotkit exports and will be available under the /v2 subpath.
+    deprecated: Moved into @copilotkit/runtime. Import from '@copilotkit/runtime/v2'.
     peerDependencies:
       '@ag-ui/client': 0.0.48
       '@ag-ui/core': 0.0.48
@@ -635,12 +635,12 @@ packages:
   '@copilotkitnext/shared@1.54.1':
     resolution: {integrity: sha512-D7GZo5gGTGmlINavvB7YzNVZj7iO0zyMvcgqE8UUMPqtAFF8znXpB3qLlfKUL/IAmLg1NDry0JB5qFaKfvVr6w==}
     engines: {node: '>=18'}
-    deprecated: This package is deprecated. Use @copilotkit/shared instead. V2 features are being integrated into the main @copilotkit exports and will be available under the /v2 subpath.
+    deprecated: Use @copilotkit/shared instead.
 
   '@copilotkitnext/web-inspector@1.54.1':
     resolution: {integrity: sha512-9QMFwZfIVeHvOPu1L++N3ziXGRHLsLYzPOybq+v2MpOzaPRMkosBG9PbdWD3uGe5ZKJUp1ixTORSqOrdwgPxmw==}
     engines: {node: '>=18'}
-    deprecated: This package is deprecated. Use @copilotkit/web-inspector instead. V2 features are being integrated into the main @copilotkit exports and will be available under the /v2 subpath.
+    deprecated: Use @copilotkit/web-inspector instead.
 
   '@dimforge/rapier3d-compat@0.12.0':
     resolution: {integrity: sha512-uekIGetywIgopfD97oDL5PfeezkFpNhwlzlaEYNOA0N6ghdsOvh/HYjSMek5Q2O1PYvRSDFcqFVJl4r4ZBwOow==}
@@ -1270,6 +1270,12 @@ packages:
     peerDependencies:
       hono: ^4
 
+  '@hono/node-server@2.1.5':
+    resolution: {integrity: sha512-MgP/I06GdvsilDspMk/qmRzpk8LOUStP6jFAbSRi40W09DhoyUn+Mj7eyKICPqeYKybOjVFLVIAQzvu1bfIa7Q==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      hono: ^4 || ^5.0.0-0
+
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
     engines: {node: '>=18.18.0'}
@@ -1672,6 +1678,16 @@ packages:
       '@cfworker/json-schema':
         optional: true
 
+  '@modelcontextprotocol/sdk@1.32.0':
+    resolution: {integrity: sha512-8BviX/hK4Gd2eL1KdTwm0gfl4d3wdoErW0Jd00h6nomUAtk6IJk5vwQJc6kfWtJTzN5OEV/lgIiJKI8fiDGAlA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@cfworker/json-schema': ^4.1.1
+      zod: ^3.25 || ^4.0
+    peerDependenciesMeta:
+      '@cfworker/json-schema':
+        optional: true
+
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
 
@@ -1826,6 +1842,7 @@ packages:
   '@opentelemetry/sdk-trace-base@2.2.0':
     resolution: {integrity: sha512-xWQgL0Bmctsalg6PaXExmzdedSp3gyKV8mQBwK/j9VGdCDu2fmXIb2gAehBKbkXCpJ4HPkgv3QfoJWRT4dHWbw==}
     engines: {node: ^18.19.0 || >=20.6.0}
+    deprecated: Use @opentelemetry/sdk-trace package
     peerDependencies:
       '@opentelemetry/api': '>=1.3.0 <1.10.0'
 
@@ -3613,6 +3630,7 @@ packages:
 
   '@ungap/structured-clone@1.3.0':
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
+    deprecated: Potential CWE-502 - Update to 1.3.1 or higher
 
   '@unrs/resolver-binding-android-arm-eabi@1.11.1':
     resolution: {integrity: sha512-ppLRUgHVaGRWUx0R0Ut06Mjo9gBaBkg3v/8AxusGLhsIotbBLuRk51rAzqLC8gq6NyyAojEXglNjzf6R948DNw==}
@@ -3821,6 +3839,9 @@ packages:
   ajv@8.18.0:
     resolution: {integrity: sha512-PlXPeEWMXMZ7sPYOHqmDyCJzcfNrUr3fGNKtezX14ykXOEIvyK81d+qydx89KY5O71FKMPaQ2vBfBFI5NHR63A==}
 
+  ajv@8.20.0:
+    resolution: {integrity: sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA==}
+
   ansi-regex@5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
     engines: {node: '>=8'}
@@ -3932,8 +3953,8 @@ packages:
   bignumber.js@9.3.1:
     resolution: {integrity: sha512-Ko0uX15oIUS7wJ3Rb30Fs6SkVbLmPBAKdlm7q9+ak9bbIeFf0MwuBsQV6z7+X768/cHsfg+WlysDWJcmthjsjQ==}
 
-  body-parser@1.20.4:
-    resolution: {integrity: sha512-ZTgYYLMOXY9qKU/57FAo8F+HA2dGX7bqGc71txDRC1rS4frdFI5R7NhluHxH6M0YItAP0sHB4uqAOcYKxO6uGA==}
+  body-parser@1.20.9:
+    resolution: {integrity: sha512-FISIQxV5u91Y9gvuFq3q/tA/qTqLJn3AhRcEvyozyhJTh5OBFFtv827AdHU7Rbyct4r+Ba1/99oFa1Y3yuFsdw==}
     engines: {node: '>= 0.8', npm: 1.2.8000 || >= 1.4.16}
 
   body-parser@2.2.2:
@@ -4675,6 +4696,7 @@ packages:
   eslint@9.39.4:
     resolution: {integrity: sha512-XoMjdBOwe/esVgEvLmNsD3IRHkm7fbKIUGvrleloJXUZgDHig2IPWNniv+GwjyJXzuNqVjlr5+4yVUZjycJwfQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
     peerDependencies:
       jiti: '*'
@@ -4728,8 +4750,8 @@ packages:
     resolution: {integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==}
     engines: {node: '>=0.8.x'}
 
-  eventsource-parser@3.0.6:
-    resolution: {integrity: sha512-Vo1ab+QXPzZ4tCa8SwIHJFaSzy4R6SHf7BY79rFBDf0idraZWAkYrDjDj8uWaSm3S2TK+hJ7/t1CEmZ7jXw+pg==}
+  eventsource-parser@3.1.1:
+    resolution: {integrity: sha512-EKN1vKAMcZ8MlYMpaNuxN6R9yakzH6uajHcHVTqWJzvu5pWw9DyhbP35HH8MVBQ+dZjAfDxk+A8NiR9KWaXiyQ==}
     engines: {node: '>=18.0.0'}
 
   eventsource@3.0.7:
@@ -4744,8 +4766,8 @@ packages:
     resolution: {integrity: sha512-INjr2xyxHo7bhAqf5ong++GZPPnpcuBcaXUKt03yf7Fie9yWD7FapL4teOU0+awQazGs5ucBh7xWs/AD+6nhog==}
     engines: {node: '>=20'}
 
-  express-rate-limit@8.3.2:
-    resolution: {integrity: sha512-77VmFeJkO0/rvimEDuUC5H30oqUC4EyOhyGccfqoLebB0oiEYfM7nwPrsDsBL1gsTpwfzX8SFy2MT3TDyRq+bg==}
+  express-rate-limit@8.7.1:
+    resolution: {integrity: sha512-2FXbqkygil3mZiXzEtM0IjE/UBmBNot0J1GEVrJT4JbrvwOSoEtqtO+wHbiMQELWe1eNvHoYRg2dkjOid+6JkA==}
     engines: {node: '>= 16'}
     peerDependencies:
       express: '>= 4.11'
@@ -4753,8 +4775,8 @@ packages:
   express-static-gzip@2.2.0:
     resolution: {integrity: sha512-4ZQ0pHX0CAauxmzry2/8XFLM6aZA4NBvg9QezSlsEO1zLnl7vMFa48/WIcjzdfOiEUS4S1npPPKP2NHHYAp6qg==}
 
-  express@4.22.1:
-    resolution: {integrity: sha512-F2X8g9P1X7uCPZMA3MVf9wcTqlyNp7IhH5qPCI0izhaOIYXaW9L535tGA3qmjRzpH+bZczqq7hVKxTR4NWnu+g==}
+  express@4.22.3:
+    resolution: {integrity: sha512-Bdcs4+3qlpVlx2NRn6fgX2Ue2/gGRaPeawebgclM0ERSCqDpA+owF1fdPwjJUTAJWMTuAaxjDf+hzb0/4eKvvw==}
     engines: {node: '>= 0.10.0'}
 
   express@5.2.1:
@@ -4796,6 +4818,9 @@ packages:
 
   fast-uri@3.1.0:
     resolution: {integrity: sha512-iPeeDKJSWf4IEOasVVrknXpaBV0IApz/gp7S2bb7Z4Lljbl2MGJRqInZiUrQwV16cpzw/D3S5j5Julj/gT52AA==}
+
+  fast-uri@3.1.9:
+    resolution: {integrity: sha512-hS/0Wt3Ya043oKXs0sIxrMpKQITXhMLIrVAKKXi4gozGC9v7YRWVnXIZzjNPTO02M9BdxLCWqK1yRXgNziVyJQ==}
 
   fastq@1.20.1:
     resolution: {integrity: sha512-GGToxJ/w1x32s/D2EKND7kTil4n8OVk/9mycTc4VDza13lOvpUZTGX3mFSCtV9ksdGBVzvsyAVLM6mHFThxXxw==}
@@ -5157,6 +5182,10 @@ packages:
     resolution: {integrity: sha512-mx/p18PLy5og9ufies2GOSUqep98Td9q4i/EF6X7yJgAiIopxqdfIO3jbqsi3jRgTgw88jMDEzVKi+V2EF+27w==}
     engines: {node: '>=16.9.0'}
 
+  hono@4.13.13:
+    resolution: {integrity: sha512-CQ46U0ZkAGmbT/4UxdzzGJpacP2IeKgY4a5/tOI9AABbpOMfK739wfDXmv1usCk+3RkKj1hQy4/fjhiwa2xlrA==}
+    engines: {node: '>=16.9.0'}
+
   html-url-attributes@3.0.1:
     resolution: {integrity: sha512-ol6UPyBWqsrO6EJySPz2O7ZSr856WDrEzM5zMqp+FJJLGMW35cLYmmZnl0vztAZxRUoNZJFTCohfjuIJ8I4QBQ==}
 
@@ -5188,6 +5217,10 @@ packages:
 
   iconv-lite@0.7.2:
     resolution: {integrity: sha512-im9DjEDQ55s9fL4EYzOAv0yMqmMBSZp6G0VvFyTMPKWxiSBHUj9NW/qqLmXUwXrrM7AvqSlTCfvqRb0cM8yYqw==}
+    engines: {node: '>=0.10.0'}
+
+  iconv-lite@0.7.3:
+    resolution: {integrity: sha512-IKXpvIzjnC9XTAUbVBcMfGS0EPaIXtW6v+zr+RRp+hqULEpo0owZax6wyRwPOJbWbzjYspQwusTsfVr0ifh4uQ==}
     engines: {node: '>=0.10.0'}
 
   ieee754@1.2.1:
@@ -5229,8 +5262,8 @@ packages:
     resolution: {integrity: sha512-5Hh7Y1wQbvY5ooGgPbDaL5iYLAPzMTUrjMulskHLH6wnv/A+1q5rgEaiuqEjB+oxGXIVZs1FF+R/KPN3ZSQYYg==}
     engines: {node: '>=12'}
 
-  ip-address@10.1.0:
-    resolution: {integrity: sha512-XXADHxXmvT9+CRxhXg56LJovE+bmWnEWB78LB83VZTprKTmaC5QfruXocxzTZ2Kl0DNwKuBdlIhjL8LeY8Sf8Q==}
+  ip-address@10.7.4:
+    resolution: {integrity: sha512-DWBMKyeM25D70nrIiTkgQth59/G+naKOTep6huF9j+GmeK3DMD60Zvxg5d5qQnz+38AHgou6ean2LECX+lrKDg==}
     engines: {node: '>= 12'}
 
   ipaddr.js@1.9.1:
@@ -5437,6 +5470,9 @@ packages:
 
   jose@5.10.0:
     resolution: {integrity: sha512-s+3Al/p9g32Iq+oqXxkW//7jk2Vig6FF1CFqzVXoTUXt2qz89YWbL+OwS17NFYEvxC35n0FKeGO2LGYSxeM2Gg==}
+
+  jose@6.2.13:
+    resolution: {integrity: sha512-7TIg10ZE1x82YediN+lcrPNvGMKge9yFHQD+Qho/b8y2adfugU3AsvvHfxV0fzyFllT6l9xCjf4RWY9g/Z9PJQ==}
 
   jose@6.2.2:
     resolution: {integrity: sha512-d7kPDd34KO/YnzaDOlikGpOurfF0ByC2sEV4cANCtdqLlTfBlw2p14O/5d/zv40gJPbIQxfES3nSx1/oYNyuZQ==}
@@ -6611,12 +6647,12 @@ packages:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
 
-  qs@6.14.2:
-    resolution: {integrity: sha512-V/yCWTTF7VJ9hIh18Ugr2zhJMP01MY7c5kh4J870L7imm6/DIzBsNLTXzMwUA3yZ5b/KBqLx8Kp3uRvd7xSe3Q==}
-    engines: {node: '>=0.6'}
-
   qs@6.15.0:
     resolution: {integrity: sha512-mAZTtNCeetKMH+pSjrb76NAM8V9a05I9aBZOHztWy/UqcJdQYNsf59vrRKWnojAT9Y+GbIvoTBC++CPHqpDBhQ==}
+    engines: {node: '>=0.6'}
+
+  qs@6.16.1:
+    resolution: {integrity: sha512-5Px6J7rfHBAGUhNQ3es4YzcOdBBw0SDcVtThJml4RdnKw4tKs2epA0kPZ+K8X+WiHktT93RHVcQ/3ym5aTCgtg==}
     engines: {node: '>=0.6'}
 
   quansync@0.2.11:
@@ -7038,6 +7074,10 @@ packages:
     resolution: {integrity: sha512-FCLHtRD/gnpCiCHEiJLOwdmFP+wzCmDEkc9y7NsYxeF4u7Btsn1ZuwgwJGxImImHicJArLP4R0yX4c2KCrMrTA==}
     engines: {node: '>= 0.4'}
 
+  side-channel-list@1.0.1:
+    resolution: {integrity: sha512-mjn/0bi/oUURjc5Xl7IaWi/OJJJumuoJFQJfDDyO46+hBWsfaVM65TBHq2eoZBhzl9EchxOijpkbRC8SVBQU0w==}
+    engines: {node: '>= 0.4'}
+
   side-channel-map@1.0.1:
     resolution: {integrity: sha512-VCjCNfgMsby3tTdo02nbjtM/ewra6jPHmpThenkTYh8pG9ucZ/1P8So4u4FGBek/BjpOVsDCMoLA/iuBKIFXRA==}
     engines: {node: '>= 0.4'}
@@ -7048,6 +7088,10 @@ packages:
 
   side-channel@1.1.0:
     resolution: {integrity: sha512-ZX99e6tRweoUXqR+VBrslhda51Nh5MTQwou5tnUDgbtyM0dBgmhEDtWGP/xbKn6hqfPRHujUNwz5fy/wbbhnpw==}
+    engines: {node: '>= 0.4'}
+
+  side-channel@1.1.1:
+    resolution: {integrity: sha512-6x6dK6zJdpTzF4sQeNYxwtvBzf6Eg4GtlesS94HOvTudUeyK2WXAaIfmDgsyslYrRBeFIlsi54AYsFGUuhmvrQ==}
     engines: {node: '>= 0.4'}
 
   signal-exit@4.1.0:
@@ -7491,6 +7535,7 @@ packages:
 
   uuid@10.0.0:
     resolution: {integrity: sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==}
+    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
     hasBin: true
 
   uuid@11.1.0:
@@ -7503,6 +7548,7 @@ packages:
 
   uuid@9.0.1:
     resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
+    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
     hasBin: true
 
   uvu@0.5.6:
@@ -7837,7 +7883,7 @@ snapshots:
       '@types/express': 4.17.25
       body-parser: 2.2.2
       cors: 2.8.6
-      express: 4.22.1
+      express: 4.22.3
       uuid: 11.1.0
     transitivePeerDependencies:
       - supports-color
@@ -7921,7 +7967,7 @@ snapshots:
   '@ag-ui/mcp-apps-middleware@0.0.2(@ag-ui/client@0.0.48)(@cfworker/json-schema@4.1.1)(rxjs@7.8.1)(zod@3.25.76)':
     dependencies:
       '@ag-ui/client': 0.0.48
-      '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
+      '@modelcontextprotocol/sdk': 1.32.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
       rxjs: 7.8.1
     transitivePeerDependencies:
       - '@cfworker/json-schema'
@@ -7931,7 +7977,7 @@ snapshots:
   '@ag-ui/mcp-apps-middleware@0.0.3(@ag-ui/client@0.0.48)(@cfworker/json-schema@4.1.1)(zod@3.25.76)':
     dependencies:
       '@ag-ui/client': 0.0.48
-      '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
+      '@modelcontextprotocol/sdk': 1.32.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
       rxjs: 7.8.1
     transitivePeerDependencies:
       - '@cfworker/json-schema'
@@ -8017,28 +8063,28 @@ snapshots:
     dependencies:
       '@ai-sdk/provider': 2.0.1
       '@standard-schema/spec': 1.1.0
-      eventsource-parser: 3.0.6
+      eventsource-parser: 3.1.1
       zod: 3.25.76
 
   '@ai-sdk/provider-utils@3.0.22(zod@3.25.76)':
     dependencies:
       '@ai-sdk/provider': 2.0.1
       '@standard-schema/spec': 1.1.0
-      eventsource-parser: 3.0.6
+      eventsource-parser: 3.1.1
       zod: 3.25.76
 
   '@ai-sdk/provider-utils@4.0.0(zod@3.25.76)':
     dependencies:
       '@ai-sdk/provider': 3.0.0
       '@standard-schema/spec': 1.1.0
-      eventsource-parser: 3.0.6
+      eventsource-parser: 3.1.1
       zod: 3.25.76
 
   '@ai-sdk/provider-utils@4.0.21(zod@3.25.76)':
     dependencies:
       '@ai-sdk/provider': 3.0.8
       '@standard-schema/spec': 1.1.0
-      eventsource-parser: 3.0.6
+      eventsource-parser: 3.1.1
       zod: 3.25.76
 
   '@ai-sdk/provider@1.1.3':
@@ -8377,7 +8423,7 @@ snapshots:
       '@ai-sdk/mcp': 1.0.30(zod@3.25.76)
       '@ai-sdk/openai': 3.0.49(zod@3.25.76)
       '@copilotkitnext/shared': 1.54.1
-      '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
+      '@modelcontextprotocol/sdk': 1.32.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
       ai: 6.0.143(zod@3.25.76)
       rxjs: 7.8.1
       zod: 3.25.76
@@ -8439,8 +8485,8 @@ snapshots:
       '@copilotkitnext/shared': 1.54.1
       '@scarf/scarf': 1.4.0
       cors: 2.8.6
-      express: 4.22.1
-      hono: 4.12.10
+      express: 4.22.3
+      hono: 4.13.13
       phoenix: 1.8.5
       rxjs: 7.8.1
       ws: 8.20.0
@@ -8893,6 +8939,10 @@ snapshots:
     dependencies:
       hono: 4.12.10
 
+  '@hono/node-server@2.1.5(hono@4.13.13)':
+    dependencies:
+      hono: 4.13.13
+
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.7':
@@ -9243,7 +9293,7 @@ snapshots:
       '@isaacs/ttlcache': 2.1.4
       '@lukeed/uuid': 2.0.1
       '@mastra/schema-compat': 1.2.7(zod@3.25.76)
-      '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
+      '@modelcontextprotocol/sdk': 1.32.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
       '@sindresorhus/slugify': 2.2.1
       '@standard-schema/spec': 1.1.0
       ajv: 8.18.0
@@ -9279,7 +9329,7 @@ snapshots:
     dependencies:
       '@apidevtools/json-schema-ref-parser': 14.2.1(@types/json-schema@7.0.15)
       '@mastra/core': 1.21.0(@cfworker/json-schema@4.1.1)(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.1.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod-to-json-schema@3.25.2(zod@3.25.76))(zod@3.25.76))(@standard-community/standard-openapi@0.2.9(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.1.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod-to-json-schema@3.25.2(zod@3.25.76))(zod@3.25.76))(@standard-schema/spec@1.1.0)(openapi-types@12.1.3)(zod@3.25.76))(@types/json-schema@7.0.15)(openapi-types@12.1.3)(zod@3.25.76)
-      '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
+      '@modelcontextprotocol/sdk': 1.32.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
       exit-hook: 5.1.0
       fast-deep-equal: 3.1.3
       uuid: 13.0.0
@@ -9299,8 +9349,8 @@ snapshots:
 
   '@mcp-ui/client@7.0.0(@cfworker/json-schema@4.1.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@modelcontextprotocol/ext-apps': 1.5.0(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.3.5))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod@3.25.76)
-      '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
+      '@modelcontextprotocol/ext-apps': 1.5.0(@modelcontextprotocol/sdk@1.32.0(@cfworker/json-schema@4.1.1)(zod@4.3.5))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod@3.25.76)
+      '@modelcontextprotocol/sdk': 1.32.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
       zod: 3.25.76
@@ -9310,8 +9360,8 @@ snapshots:
 
   '@mcp-ui/server@6.1.0(@cfworker/json-schema@4.1.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod@4.3.5)':
     dependencies:
-      '@modelcontextprotocol/ext-apps': 0.3.1(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.3.5))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod@4.3.5)
-      '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@4.3.5)
+      '@modelcontextprotocol/ext-apps': 0.3.1(@modelcontextprotocol/sdk@1.32.0(@cfworker/json-schema@4.1.1)(zod@4.3.5))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod@4.3.5)
+      '@modelcontextprotocol/sdk': 1.32.0(@cfworker/json-schema@4.1.1)(zod@4.3.5)
     transitivePeerDependencies:
       - '@cfworker/json-schema'
       - react
@@ -9395,8 +9445,8 @@ snapshots:
       '@langchain/google-genai': 2.1.26(@langchain/core@1.1.38(@opentelemetry/api@1.9.1)(@opentelemetry/sdk-trace-base@2.2.0(@opentelemetry/api@1.9.1))(openai@6.33.0(ws@8.20.0)(zod@4.3.5))(ws@8.20.0))
       '@langchain/openai': 1.4.1(@langchain/core@1.1.38(@opentelemetry/api@1.9.1)(@opentelemetry/sdk-trace-base@2.2.0(@opentelemetry/api@1.9.1))(openai@6.33.0(ws@8.20.0)(zod@4.3.5))(ws@8.20.0))(ws@8.20.0)
       '@mcp-ui/client': 7.0.0(@cfworker/json-schema@4.1.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@modelcontextprotocol/ext-apps': 1.5.0(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.3.5))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod@4.3.5)
-      '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@4.3.5)
+      '@modelcontextprotocol/ext-apps': 1.5.0(@modelcontextprotocol/sdk@1.32.0(@cfworker/json-schema@4.1.1)(zod@4.3.5))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod@4.3.5)
+      '@modelcontextprotocol/sdk': 1.32.0(@cfworker/json-schema@4.1.1)(zod@4.3.5)
       '@radix-ui/react-alert-dialog': 1.1.15(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@radix-ui/react-checkbox': 1.3.3(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@radix-ui/react-dialog': 1.1.15(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -9460,8 +9510,8 @@ snapshots:
       '@langchain/google-genai': 2.1.26(@langchain/core@1.1.38(@opentelemetry/api@1.9.1)(@opentelemetry/sdk-trace-base@2.2.0(@opentelemetry/api@1.9.1))(openai@6.33.0(ws@8.20.0)(zod@4.3.5))(ws@8.20.0))
       '@langchain/openai': 1.4.1(@langchain/core@1.1.38(@opentelemetry/api@1.9.1)(@opentelemetry/sdk-trace-base@2.2.0(@opentelemetry/api@1.9.1))(openai@6.33.0(ws@8.20.0)(zod@4.3.5))(ws@8.20.0))(ws@8.20.0)
       '@mcp-ui/client': 7.0.0(@cfworker/json-schema@4.1.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@modelcontextprotocol/ext-apps': 1.5.0(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.3.5))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod@4.3.5)
-      '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@4.3.5)
+      '@modelcontextprotocol/ext-apps': 1.5.0(@modelcontextprotocol/sdk@1.32.0(@cfworker/json-schema@4.1.1)(zod@4.3.5))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod@4.3.5)
+      '@modelcontextprotocol/sdk': 1.32.0(@cfworker/json-schema@4.1.1)(zod@4.3.5)
       '@radix-ui/react-alert-dialog': 1.1.15(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@radix-ui/react-checkbox': 1.3.3(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@radix-ui/react-dialog': 1.1.15(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -9521,9 +9571,9 @@ snapshots:
     dependencies:
       langium: 4.2.1
 
-  '@modelcontextprotocol/ext-apps@0.3.1(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.3.5))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod@4.3.5)':
+  '@modelcontextprotocol/ext-apps@0.3.1(@modelcontextprotocol/sdk@1.32.0(@cfworker/json-schema@4.1.1)(zod@4.3.5))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod@4.3.5)':
     dependencies:
-      '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@4.3.5)
+      '@modelcontextprotocol/sdk': 1.32.0(@cfworker/json-schema@4.1.1)(zod@4.3.5)
       zod: 4.3.5
     optionalDependencies:
       '@oven/bun-darwin-aarch64': 1.3.11
@@ -9546,9 +9596,9 @@ snapshots:
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
 
-  '@modelcontextprotocol/ext-apps@0.4.2(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.3.5))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod@4.3.5)':
+  '@modelcontextprotocol/ext-apps@0.4.2(@modelcontextprotocol/sdk@1.32.0(@cfworker/json-schema@4.1.1)(zod@4.3.5))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod@4.3.5)':
     dependencies:
-      '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@4.3.5)
+      '@modelcontextprotocol/sdk': 1.32.0(@cfworker/json-schema@4.1.1)(zod@4.3.5)
       zod: 4.3.5
     optionalDependencies:
       '@oven/bun-darwin-aarch64': 1.3.11
@@ -9568,14 +9618,6 @@ snapshots:
       '@rollup/rollup-linux-x64-gnu': 4.60.1
       '@rollup/rollup-win32-arm64-msvc': 4.60.1
       '@rollup/rollup-win32-x64-msvc': 4.60.1
-      react: 19.2.4
-      react-dom: 19.2.4(react@19.2.4)
-
-  '@modelcontextprotocol/ext-apps@1.5.0(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.3.5))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod@3.25.76)':
-    dependencies:
-      '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@4.3.5)
-      zod: 3.25.76
-    optionalDependencies:
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
 
@@ -9587,20 +9629,60 @@ snapshots:
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
 
-  '@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)':
+  '@modelcontextprotocol/ext-apps@1.5.0(@modelcontextprotocol/sdk@1.32.0(@cfworker/json-schema@4.1.1)(zod@4.3.5))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod@3.25.76)':
+    dependencies:
+      '@modelcontextprotocol/sdk': 1.32.0(@cfworker/json-schema@4.1.1)(zod@4.3.5)
+      zod: 3.25.76
+    optionalDependencies:
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@modelcontextprotocol/ext-apps@1.5.0(@modelcontextprotocol/sdk@1.32.0(@cfworker/json-schema@4.1.1)(zod@4.3.5))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod@4.3.5)':
+    dependencies:
+      '@modelcontextprotocol/sdk': 1.32.0(@cfworker/json-schema@4.1.1)(zod@4.3.5)
+      zod: 4.3.5
+    optionalDependencies:
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.3.5)':
     dependencies:
       '@hono/node-server': 1.19.12(hono@4.12.10)
-      ajv: 8.18.0
-      ajv-formats: 3.0.1(ajv@8.18.0)
+      ajv: 8.20.0
+      ajv-formats: 3.0.1(ajv@8.20.0)
       content-type: 1.0.5
       cors: 2.8.6
       cross-spawn: 7.0.6
       eventsource: 3.0.7
-      eventsource-parser: 3.0.6
+      eventsource-parser: 3.1.1
       express: 5.2.1
-      express-rate-limit: 8.3.2(express@5.2.1)
+      express-rate-limit: 8.7.1(express@5.2.1)
       hono: 4.12.10
       jose: 6.2.2
+      json-schema-typed: 8.0.2
+      pkce-challenge: 5.0.1
+      raw-body: 3.0.2
+      zod: 4.3.5
+      zod-to-json-schema: 3.25.2(zod@4.3.5)
+    optionalDependencies:
+      '@cfworker/json-schema': 4.1.1
+    transitivePeerDependencies:
+      - supports-color
+
+  '@modelcontextprotocol/sdk@1.32.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)':
+    dependencies:
+      '@hono/node-server': 2.1.5(hono@4.13.13)
+      ajv: 8.20.0
+      ajv-formats: 3.0.1(ajv@8.20.0)
+      content-type: 1.0.5
+      cors: 2.8.6
+      cross-spawn: 7.0.6
+      eventsource: 3.0.7
+      eventsource-parser: 3.1.1
+      express: 5.2.1
+      express-rate-limit: 8.7.1(express@5.2.1)
+      hono: 4.13.13
+      jose: 6.2.13
       json-schema-typed: 8.0.2
       pkce-challenge: 5.0.1
       raw-body: 3.0.2
@@ -9611,20 +9693,20 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.3.5)':
+  '@modelcontextprotocol/sdk@1.32.0(@cfworker/json-schema@4.1.1)(zod@4.3.5)':
     dependencies:
-      '@hono/node-server': 1.19.12(hono@4.12.10)
-      ajv: 8.18.0
-      ajv-formats: 3.0.1(ajv@8.18.0)
+      '@hono/node-server': 2.1.5(hono@4.13.13)
+      ajv: 8.20.0
+      ajv-formats: 3.0.1(ajv@8.20.0)
       content-type: 1.0.5
       cors: 2.8.6
       cross-spawn: 7.0.6
       eventsource: 3.0.7
-      eventsource-parser: 3.0.6
+      eventsource-parser: 3.1.1
       express: 5.2.1
-      express-rate-limit: 8.3.2(express@5.2.1)
-      hono: 4.12.10
-      jose: 6.2.2
+      express-rate-limit: 8.7.1(express@5.2.1)
+      hono: 4.13.13
+      jose: 6.2.13
       json-schema-typed: 8.0.2
       pkce-challenge: 5.0.1
       raw-body: 3.0.2
@@ -11699,9 +11781,9 @@ snapshots:
       '@opentelemetry/api': 1.9.0
       zod: 3.25.76
 
-  ajv-formats@3.0.1(ajv@8.18.0):
+  ajv-formats@3.0.1(ajv@8.20.0):
     optionalDependencies:
-      ajv: 8.18.0
+      ajv: 8.20.0
 
   ajv@6.14.0:
     dependencies:
@@ -11714,6 +11796,13 @@ snapshots:
     dependencies:
       fast-deep-equal: 3.1.3
       fast-uri: 3.1.0
+      json-schema-traverse: 1.0.0
+      require-from-string: 2.0.2
+
+  ajv@8.20.0:
+    dependencies:
+      fast-deep-equal: 3.1.3
+      fast-uri: 3.1.9
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
 
@@ -11837,7 +11926,7 @@ snapshots:
 
   bignumber.js@9.3.1: {}
 
-  body-parser@1.20.4:
+  body-parser@1.20.9:
     dependencies:
       bytes: 3.1.2
       content-type: 1.0.5
@@ -11847,7 +11936,7 @@ snapshots:
       http-errors: 2.0.1
       iconv-lite: 0.4.24
       on-finished: 2.4.1
-      qs: 6.14.2
+      qs: 6.16.1
       raw-body: 2.5.3
       type-is: 1.6.18
       unpipe: 1.0.0
@@ -12654,7 +12743,7 @@ snapshots:
       eslint: 9.39.4(jiti@2.6.1)
       eslint-import-resolver-node: 0.3.10
       eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1)))(eslint@9.39.4(jiti@2.6.1))
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1)))(eslint@9.39.4(jiti@2.6.1)))(eslint@9.39.4(jiti@2.6.1))
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.4(jiti@2.6.1))
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.39.4(jiti@2.6.1))
       eslint-plugin-react: 7.37.5(eslint@9.39.4(jiti@2.6.1))
       eslint-plugin-react-hooks: 7.0.1(eslint@9.39.4(jiti@2.6.1))
@@ -12687,7 +12776,7 @@ snapshots:
       tinyglobby: 0.2.15
       unrs-resolver: 1.11.1
     optionalDependencies:
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1)))(eslint@9.39.4(jiti@2.6.1)))(eslint@9.39.4(jiti@2.6.1))
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.4(jiti@2.6.1))
     transitivePeerDependencies:
       - supports-color
 
@@ -12702,7 +12791,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1)))(eslint@9.39.4(jiti@2.6.1)))(eslint@9.39.4(jiti@2.6.1)):
+  eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.4(jiti@2.6.1)):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.9
@@ -12867,11 +12956,11 @@ snapshots:
 
   events@3.3.0: {}
 
-  eventsource-parser@3.0.6: {}
+  eventsource-parser@3.1.1: {}
 
   eventsource@3.0.7:
     dependencies:
-      eventsource-parser: 3.0.6
+      eventsource-parser: 3.1.1
 
   execa@9.6.1:
     dependencies:
@@ -12890,10 +12979,13 @@ snapshots:
 
   exit-hook@5.1.0: {}
 
-  express-rate-limit@8.3.2(express@5.2.1):
+  express-rate-limit@8.7.1(express@5.2.1):
     dependencies:
+      debug: 4.4.3
       express: 5.2.1
-      ip-address: 10.1.0
+      ip-address: 10.7.4
+    transitivePeerDependencies:
+      - supports-color
 
   express-static-gzip@2.2.0:
     dependencies:
@@ -12902,11 +12994,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  express@4.22.1:
+  express@4.22.3:
     dependencies:
       accepts: 1.3.8
       array-flatten: 1.1.1
-      body-parser: 1.20.4
+      body-parser: 1.20.9
       content-disposition: 0.5.4
       content-type: 1.0.5
       cookie: 0.7.2
@@ -12925,7 +13017,7 @@ snapshots:
       parseurl: 1.3.3
       path-to-regexp: 0.1.13
       proxy-addr: 2.0.7
-      qs: 6.14.2
+      qs: 6.16.1
       range-parser: 1.2.1
       safe-buffer: 5.2.1
       send: 0.19.2
@@ -13006,6 +13098,8 @@ snapshots:
   fast-safe-stringify@2.1.1: {}
 
   fast-uri@3.1.0: {}
+
+  fast-uri@3.1.9: {}
 
   fastq@1.20.1:
     dependencies:
@@ -13469,6 +13563,8 @@ snapshots:
 
   hono@4.12.10: {}
 
+  hono@4.13.13: {}
+
   html-url-attributes@3.0.1: {}
 
   html-void-elements@3.0.0: {}
@@ -13506,6 +13602,10 @@ snapshots:
     dependencies:
       safer-buffer: 2.1.2
 
+  iconv-lite@0.7.3:
+    dependencies:
+      safer-buffer: 2.1.2
+
   ieee754@1.2.1: {}
 
   ignore@5.3.2: {}
@@ -13535,7 +13635,7 @@ snapshots:
 
   internmap@2.0.3: {}
 
-  ip-address@10.1.0: {}
+  ip-address@10.7.4: {}
 
   ipaddr.js@1.9.1: {}
 
@@ -13723,6 +13823,8 @@ snapshots:
   jiti@2.6.1: {}
 
   jose@5.10.0: {}
+
+  jose@6.2.13: {}
 
   jose@6.2.2: {}
 
@@ -15357,13 +15459,14 @@ snapshots:
 
   punycode@2.3.1: {}
 
-  qs@6.14.2:
-    dependencies:
-      side-channel: 1.1.0
-
   qs@6.15.0:
     dependencies:
       side-channel: 1.1.0
+
+  qs@6.16.1:
+    dependencies:
+      es-define-property: 1.0.1
+      side-channel: 1.1.1
 
   quansync@0.2.11: {}
 
@@ -15451,7 +15554,7 @@ snapshots:
     dependencies:
       bytes: 3.1.2
       http-errors: 2.0.1
-      iconv-lite: 0.7.2
+      iconv-lite: 0.7.3
       unpipe: 1.0.0
 
   react-dom@19.2.4(react@19.2.4):
@@ -16070,6 +16173,11 @@ snapshots:
       es-errors: 1.3.0
       object-inspect: 1.13.4
 
+  side-channel-list@1.0.1:
+    dependencies:
+      es-errors: 1.3.0
+      object-inspect: 1.13.4
+
   side-channel-map@1.0.1:
     dependencies:
       call-bound: 1.0.4
@@ -16090,6 +16198,14 @@ snapshots:
       es-errors: 1.3.0
       object-inspect: 1.13.4
       side-channel-list: 1.0.0
+      side-channel-map: 1.0.1
+      side-channel-weakmap: 1.0.2
+
+  side-channel@1.1.1:
+    dependencies:
+      es-errors: 1.3.0
+      object-inspect: 1.13.4
+      side-channel-list: 1.0.1
       side-channel-map: 1.0.1
       side-channel-weakmap: 1.0.2
 
