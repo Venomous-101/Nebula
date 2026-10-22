@@ -1,5 +1,5 @@
 streamlit==1.44.1
-pillow==11.1.0
+pillow==13.0.0
 agno>=2.2.10
 google-genai>=2.0.0
 openai
