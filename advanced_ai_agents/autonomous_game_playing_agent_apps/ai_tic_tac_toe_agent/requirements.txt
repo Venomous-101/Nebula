@@ -112,7 +112,7 @@ packaging==24.2
     #   streamlit
 pandas==2.2.3
     # via streamlit
-pillow==11.1.0
+pillow==13.0.0
     # via
     #   -r cookbook/examples/apps/tic_tac_toe/requirements.in
     #   streamlit
