@@ -142,7 +142,7 @@ orjson==3.10.16
 packaging==24.2
 pandas==2.2.3
 phonemizer-fork==3.3.2
-pillow==11.2.1
+pillow==13.0.0
 pip-chill==1.0.3
 playwright==1.52.0
 pluggy==1.6.0
