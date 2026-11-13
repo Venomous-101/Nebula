@@ -14,7 +14,7 @@
     "@copilotkit/react-core": "1.59.2",
     "@copilotkit/runtime": "1.59.2",
     "@copilotkit/shared": "1.59.2",
-    "hono": "^4.12.23",
+    "hono": "^4.13.16",
     "next": "16.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
