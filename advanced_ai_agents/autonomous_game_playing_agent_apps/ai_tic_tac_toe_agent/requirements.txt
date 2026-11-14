@@ -206,7 +206,7 @@ toml==0.10.2
     # via streamlit
 tomli==2.2.1
     # via agno
-tornado==6.4.2
+tornado==6.6.1
     # via streamlit
 tqdm==4.67.1
     # via openai
